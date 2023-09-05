@@ -54,3 +54,20 @@ The code below is an example of a so called Pure React:
 The above codebase created a `header` component with the `React.createElement` that has a string _hello world..._ and **time** state(variable) that is updates every second using `React.useEffect` and the JS setInterval(). This all then render by the DOM.
 
 ![DOM screenshot](project-images/DOM-screenshot.png)
+
+To set up a React project, you have 2 options. One is `Create-React-App` which is ideal for smaller projects, but is slow and outdated. The other is `Vite`, geared towards complex production react applications. It is extremely fast.
+
+#### `Components`:
+
+- As earlier mentioned, React applications are component based.
+- These components are the building blocks of the UI.
+- Components comprises of 'data', 'logic' and 'appearance'.
+- And ofcourse components are reused, can be nested (parent and child component), and data can be passed between them.
+
+#### `JSX`:
+
+- JSX is a JavaScript extension that allows us to embed JavaScript, CSS and React components into HTML.
+- JSX is similar to HTML but it's not HTML.
+- Every components must return a block of JSX.
+- But we can use React without JSX.
+- JSX is declarative (meaning it describes what the component should look like) rather than imperative (how to do things.)
