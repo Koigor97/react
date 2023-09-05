@@ -6,10 +6,10 @@ React is a JavaScript framework/library that boost developmen productivity x2. I
 
 ---
 
-| Projects 👫 | Difficulty Level 📊 | Progress 📈 |
-| :---------: | :-----------------: | :---------: |
-|    ....     |        ....         |    ....     |
-|             |                     |             |
+| Projects 👫 | Difficulty Level 📊 | Progress 📈  |
+| :---------: | :-----------------: | :----------: |
+| Pizza-Menu  |     Beginner 🏃🏽‍♂️     | ✅ Completed |
+|             |                     |              |
 
 ---
 
@@ -71,3 +71,5 @@ To set up a React project, you have 2 options. One is `Create-React-App` which i
 - Every components must return a block of JSX.
 - But we can use React without JSX.
 - JSX is declarative (meaning it describes what the component should look like) rather than imperative (how to do things.)
+
+![pizza menu image](project-images/pizza-menu.webp)
