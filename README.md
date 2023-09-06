@@ -72,4 +72,22 @@ To set up a React project, you have 2 options. One is `Create-React-App` which i
 - But we can use React without JSX.
 - JSX is declarative (meaning it describes what the component should look like) rather than imperative (how to do things.)
 
+**Few rules of JSX**:  
+| General Rules of JSX | Difference between JSX and HTML |
+| :------------------: | :-----------------------------: |
+| Statement are not allowed. Like 'if/else', 'for' or 'switch' | JSX uses className instead of HTML class |
+JSX produces JavaScript expression which allows us to use JS expressions, like create arrays or objects, ternary operator, reference variables etc. by using using '{ }' | Event handlers and other properties should be **camelCased** |
+| If you need more than one root element you can use `<React.Fragment> or <> for short`, otherwise every piece of JSX can only have **one root element.** | CSS property names are also **camelCased**. We can write in CSS in JSX like this: `{{<style>}}` |
+
+#### `Props`:
+
+- Props are just variables used to pass data from the parent components to the child components.
+- However, they are **immutable**. **State** on the other hand is mutable. These are variables declared in the child component.
+- Props can be anything. An array, objects, functions, values or even other components.
+- And with props, parent components control the look and feel, and function of the child components.
+
+---
+
+##### Pizza Menu project 👇🏾
+
 ![pizza menu image](project-images/pizza-menu.webp)
