@@ -9,7 +9,7 @@ React is a JavaScript framework/library that boost developmen productivity x2. I
 
 ---
 
-| Projects 👫 | Difficulty Level 📊 | Progress 📈  |
+| Projects ⚛️ | Difficulty Level 📊 | Progress 📈  |
 | :---------: | :-----------------: | :----------: |
 | Pizza-Menu  |     Beginner 🏃🏽‍♂️     | ✅ Completed |
 |             |                     |              |
@@ -103,3 +103,10 @@ JSX produces JavaScript expression which allows us to use JS expressions, like c
 State, is the component's memory 🧠. A state persist or mutuates based on it use case throughout an application's lifecycle. When a state is mutated/updated, it triggers React to update the UI view of the component. When one masters 'State', he/she unlock the power of React development.  
 We declare state using the '**useState**' by: `const [step, setStep] = useState(1);`.
 And we update that state like this: `setStep(step + 1);`
+
+|                               Practical Guideline About State                                |
+| :------------------------------------------------------------------------------------------: |
+|      If a data will change during the lifecycle of the application, use State variables      |
+|              Create a state for something that is dynamic. Like a modal window.              |
+| If a component or a data changes it looks whenever an event happens, use State to update it. |
+|                Any data that don't trigger a re-render, use regular variables                |
