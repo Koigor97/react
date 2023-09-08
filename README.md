@@ -100,4 +100,6 @@ JSX produces JavaScript expression which allows us to use JS expressions, like c
 #### What I learned today - 08/Sep/2023:
 
 `State` is the most important concept in React. So what is state?  
-State, is the component's memory 🧠. A state persist or mutuates based on it use case throughout an application's lifecycle. When a state is mutated/updated, it triggers React to update the UI view of that state in the component. When one masters 'State', he/she unlock the power of React development.
+State, is the component's memory 🧠. A state persist or mutuates based on it use case throughout an application's lifecycle. When a state is mutated/updated, it triggers React to update the UI view of the component. When one masters 'State', he/she unlock the power of React development.  
+We declare state using the '**useState**' by: `const [step, setStep] = useState(1);`.
+And we update that state like this: `setStep(step + 1);`
