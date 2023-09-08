@@ -4,6 +4,9 @@
 
 React is a JavaScript framework/library that boost developmen productivity x2. It all about component (resuable) that can be used in different projects. Now this repository is all about my React development journey. Wish me luck 💪🏽💯.
 
+> [!Info]  
+> I am learning react with Jonas Schmedtmann React course on Udemy. All projects are designed by him.
+
 ---
 
 | Projects 👫 | Difficulty Level 📊 | Progress 📈  |
@@ -91,3 +94,10 @@ JSX produces JavaScript expression which allows us to use JS expressions, like c
 ##### Pizza Menu project 👇🏾
 
 ![pizza menu image](project-images/pizza-menu.webp)
+
+---
+
+#### What I learned today - 08/Sep/2023:
+
+`State` is the most important concept in React. So what is state?  
+State, is the component's memory 🧠. A state persist or mutuates based on it use case throughout an application's lifecycle. When a state is mutated/updated, it triggers React to update the UI view of that state in the component. When one masters 'State', he/she unlock the power of React development.
