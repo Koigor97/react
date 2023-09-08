@@ -12,7 +12,7 @@ React is a JavaScript framework/library that boost developmen productivity x2. I
 | Projects ⚛️ | Difficulty Level 📊 | Progress 📈  |
 | :---------: | :-----------------: | :----------: |
 | Pizza-Menu  |     Beginner 🏃🏽‍♂️     | ✅ Completed |
-|             |                     |              |
+|    Steps    |     Beginner 🏃🏽‍♂️     | ✅ Completed |
 
 ---
 
@@ -110,3 +110,7 @@ And we update that state like this: `setStep(step + 1);`
 |              Create a state for something that is dynamic. Like a modal window.              |
 | If a component or a data changes it looks whenever an event happens, use State to update it. |
 |                Any data that don't trigger a re-render, use regular variables                |
+
+##### Steps project 👇🏾
+
+![Steps project image](project-images/steps.png)
