@@ -2,8 +2,6 @@
 
 # React.js
 
-> ### [!NOTE] As of Sep/08/2023, this repository is on pause ⏸️ mode for the starting of my Semester!
-
 React is a JavaScript framework/library that boost developmen productivity x2. It all about component (resuable) that can be used in different projects. Now this repository is all about my React development journey. Wish me luck 💪🏽💯.
 
 > [!Note]  
