@@ -46,7 +46,7 @@ function Form() {
 
   return (
     <form className="add-form" onSubmit={handleSubmit}>
-      <h3>Take what you need for your tavels 😉</h3>
+      <h3>Take what you need for your travels 😉</h3>
 
       <select
         value={quantity}
