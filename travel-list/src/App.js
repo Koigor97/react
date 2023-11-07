@@ -8,11 +8,17 @@ const initialItems = [
 ];
 
 export default function App() {
+  const [items, setItems] = useState([]);
+
+  function handleAddingItems(item) {
+    setItems((items) => [...items, item]);
+  }
+
   return (
     <div>
       <Header />
-      <Form />
-      <PackingList />
+      <Form onAddingItems={handleAddingItems} />
+      <PackingList items={items} />
       <Report />
     </div>
   );
@@ -26,7 +32,7 @@ function Header() {
   );
 }
 
-function Form() {
+function Form({ onAddingItems }) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -42,6 +48,10 @@ function Form() {
       id: Date.now(),
     };
     console.log(newItem);
+    onAddingItems(newItem);
+
+    setDescription("");
+    setQuantity(1);
   }
 
   return (
@@ -70,11 +80,11 @@ function Form() {
   );
 }
 
-function PackingList() {
+function PackingList({ items }) {
   return (
     <div className="list">
       <ul>
-        {initialItems.map((item) => (
+        {items.map((item) => (
           <Item item={item} key={item.id} />
         ))}
       </ul>
