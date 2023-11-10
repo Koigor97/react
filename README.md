@@ -9,11 +9,12 @@ React is a JavaScript framework/library that boost developmen productivity x2. I
 
 ---
 
-| Projects ⚛️ | Difficulty Level 📊 |  Progress 📈   |
-| :---------: | :-----------------: | :------------: |
-| Pizza-Menu  |     Beginner 🏃🏽‍♂️     |  ✅ Completed  |
-|    Steps    |     Beginner 🏃🏽‍♂️     |  ✅ Completed  |
-| Travel-list |     Beginner 🏃🏽‍♂️     | 🌀 in-progress |
+| Projects ⚛️ | Difficulty Level 📊 | Progress 📈  |
+| :---------: | :-----------------: | :----------: |
+| Pizza-Menu  |     Beginner 🏃🏽‍♂️     | ✅ Completed |
+|    Steps    |     Beginner 🏃🏽‍♂️     | ✅ Completed |
+| Travel-list |     Beginner 🏃🏽‍♂️     | ✅ Completed |
+| Eat-N-Split |     Beginner 🏃🏽‍♂️     | ✅ Completed |
 
 ---
 
