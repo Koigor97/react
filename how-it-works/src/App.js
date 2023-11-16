@@ -98,3 +98,6 @@ function DifferentContent() {
     </div>
   );
 }
+
+console.log(<DifferentContent />);
+console.log(DifferentContent());
