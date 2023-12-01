@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { WatchedMovieSummary } from "./WatchedMovieSummary";
 import { WatchMovieList } from "./WatchMovieList";
 import { SelectedMovie } from "./SelectedMovie";
 import { MovieList } from "./MovieList";
 import { MovieBox } from "./MovieBox";
+import { useMovies } from "./useMovie";
+import { useLocalStorageState } from "./useLocalStorageState";
 
 ////////////////////////////////////////////////////////////////////
 
@@ -15,11 +17,10 @@ export const average = (arr) =>
 /////////////////////////////////////////////////////////////////
 export default function App() {
   const [query, setQuery] = useState("");
-  const [movies, setMovies] = useState([]);
-  const [watched, setWatched] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
   const [selectedId, setSelectedId] = useState(null);
+  const { movies, isLoading, error } = useMovies(query);
+
+  const [watched, setWatched] = useLocalStorageState([], "watched");
 
   function handleSelectMovie(movieId) {
     setSelectedId((selectedId) => (selectedId === movieId ? null : movieId));
@@ -38,52 +39,6 @@ export default function App() {
       watched.filter((movie) => movie.imdbID !== movieId)
     );
   }
-
-  useEffect(
-    function () {
-      const controller = new AbortController();
-
-      async function fetchMovies() {
-        try {
-          setIsLoading(true);
-          setError("");
-          const response = await fetch(
-            `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
-            { signal: controller.signal }
-          );
-
-          if (!response.ok)
-            throw new Error("Something went wrong with fetching movies");
-
-          const data = await response.json();
-          if (data.Response === "False") throw new Error("Movie not found");
-          setMovies(data.Search);
-          // console.log(data.Search);
-          setError("");
-        } catch (error) {
-          if (error.name !== "AbortError") {
-            setError(error.message);
-          }
-        } finally {
-          setIsLoading(false);
-        }
-      }
-
-      if (query.length < 3) {
-        setMovies([]);
-        setError("");
-        return;
-      }
-
-      handleCloseMovie();
-      fetchMovies();
-
-      return function () {
-        controller.abort();
-      };
-    },
-    [query]
-  );
 
   return (
     <>
@@ -159,6 +114,25 @@ function Main({ children }) {
 //////////////////////////////////////////////////////////////////
 // Search Bar component
 function SearchBar({ query, setQuery }) {
+  const inputEl = useRef(null);
+
+  useEffect(
+    function () {
+      function callback(e) {
+        if (document.activeElement === inputEl.current) return;
+
+        if (e.code === "Enter") {
+          inputEl.current.focus();
+          setQuery("");
+        }
+      }
+
+      document.addEventListener("keydown", callback);
+      return () => document.addEventListener("keydown", callback);
+    },
+    [setQuery]
+  );
+
   return (
     <input
       className="search"
@@ -166,6 +140,7 @@ function SearchBar({ query, setQuery }) {
       placeholder="Search movies..."
       value={query}
       onChange={(e) => setQuery(e.target.value)}
+      ref={inputEl}
     />
   );
 }
