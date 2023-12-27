@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root {
+  --bg-color: #0c0705;
+  --font-color: #cbddf2;
+  --font-family: "Nunito", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  font-size: 1.2rem;
+}
+
+.header {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+  text-align: center;
+  padding-inline: 0.5em;
+  padding-block: 0.5rem;
+  margin-block-end: 2.5rem;
+}
+
+.list-item-div {
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: var(--bg-color);
+  max-width: 65%;
+  padding-block: 1.5em;
+  margin: 0 auto;
+  position: relative;
+}
+
+.priority-box {
+  background-color: orangered;
+  padding-block: 0.3em;
+  padding-inline: 1em;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: -1rem;
+  top: -1rem;
+}
