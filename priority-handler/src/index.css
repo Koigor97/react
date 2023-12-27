@@ -28,26 +28,104 @@ body {
   text-align: center;
   padding-inline: 0.5em;
   padding-block: 0.5rem;
-  margin-block-end: 2.5rem;
+  /* margin-block-end: 1.5rem; */
 }
 
 .list-item-div {
   background-color: whitesmoke;
   border-radius: 0.5rem;
+  font-size: 1.4rem;
   text-align: center;
   color: var(--bg-color);
-  max-width: 65%;
-  padding-block: 1.5em;
+  /* width: 65%; */
+  padding-block: 2.5em;
+  padding-inline: 2.5em;
   margin: 0 auto;
   position: relative;
 }
 
 .priority-box {
-  background-color: orangered;
+  background-color: white;
   padding-block: 0.3em;
   padding-inline: 1em;
   border-radius: 0.5rem;
   position: absolute;
-  left: -1rem;
-  top: -1rem;
+  left: -2.5rem;
+  top: -1.5rem;
+}
+
+.high {
+  background-color: orangered;
+}
+.medium {
+  background-color: orange;
+}
+.low {
+  background-color: limegreen;
+}
+
+.dark-mode {
+  background-color: rgba(41, 13, 55, 0.667);
+  color: white;
+  outline: 1px solid rgba(149, 0, 223, 0.75);
+}
+
+.main {
+  display: grid;
+  gap: 3.5rem;
+  padding-inline: 2.5em;
+  padding-block: 1.5em;
+}
+
+.close-btn {
+  font-size: 1.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+}
+
+.close-btn:active {
+  outline: 1px solid purple;
+}
+
+.task-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="checkbox"] {
+  height: 1.5rem;
+  width: 1.5rem;
+  accent-color: lime;
+}
+
+.completed {
+  filter: grayscale(60%);
+  background-color: gray;
+}
+
+.checkbox-label {
+  color: #c22527;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .list-item-div {
+    max-width: 60rem;
+  }
 }
