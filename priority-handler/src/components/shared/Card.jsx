@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
-function Card({ children, darkMode, dummyTask }) {
-  console.log(dummyTask);
+function Card({ dummyTask, darkMode, children }) {
   return (
     <div
       className={`list-item-div ${darkMode && "dark-mode"} ${
