@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import ListItem from "./components/ListItem";
 import TaskStats from "./components/TaskStats";
+import TaskForm from "./components/TaskForm";
+
 import DummyTasks from "./data/dummyTaskData";
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
     <>
       <Header />
       <Main>
+        <TaskForm />
         <TaskStats dummyTask={dummyTask} />
         {dummyTask.map((tasks) => (
           <ListItem
