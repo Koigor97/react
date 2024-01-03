@@ -254,6 +254,7 @@ input:focus {
   padding-top: 10px;
   text-align: left;
   color: #c22527;
+  font-size: 1rem;
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
@@ -302,6 +303,6 @@ input:focus {
 
 @media only screen and (min-width: 37.5em) {
   .list-item-div {
-    max-width: 60rem;
+    width: 50%;
   }
 }
