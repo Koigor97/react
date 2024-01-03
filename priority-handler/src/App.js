@@ -6,6 +6,8 @@ import ListItem from "./components/ListItem";
 import TaskStats from "./components/TaskStats";
 import TaskForm from "./components/TaskForm";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 import DummyTasks from "./data/dummyTaskData";
 
 function App() {
@@ -21,14 +23,23 @@ function App() {
       <Main>
         <TaskForm handleNewTask={handleAddNewTask} />
         <TaskStats dummyTask={dummyTask} />
-        {dummyTask.map((tasks) => (
-          <ListItem
-            key={tasks.id}
-            task={tasks}
-            dummyTask={dummyTask}
-            setTask={setDummyTask}
-          />
-        ))}
+        <AnimatePresence>
+          {dummyTask.map((tasks) => (
+            <motion.div
+              key={tasks.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <ListItem
+                key={tasks.id}
+                task={tasks}
+                dummyTask={dummyTask}
+                setTask={setDummyTask}
+              />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </Main>
     </>
   );
