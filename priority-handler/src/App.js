@@ -11,11 +11,15 @@ import DummyTasks from "./data/dummyTaskData";
 function App() {
   const [dummyTask, setDummyTask] = useState(DummyTasks);
 
+  function handleAddNewTask(value) {
+    setDummyTask([value, ...dummyTask]);
+  }
+
   return (
     <>
       <Header />
       <Main>
-        <TaskForm />
+        <TaskForm handleNewTask={handleAddNewTask} />
         <TaskStats dummyTask={dummyTask} />
         {dummyTask.map((tasks) => (
           <ListItem
