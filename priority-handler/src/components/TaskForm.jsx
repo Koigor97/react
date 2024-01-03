@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import Card from "./shared/Card";
+import PrioritySelect from "./PrioritySelect";
 import Button from "./shared/Button";
 
-function TaskForm() {
+function TaskForm({ handleNewTask }) {
   const [task, setTask] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
+  const [priority, setPriority] = useState("");
 
   function handleInputForm(e) {
     if (task === "") {
@@ -22,11 +25,29 @@ function TaskForm() {
     setTask(e.target.value);
   }
 
+  function handleSelectPriority(value) {
+    setPriority(value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (task.trim().length > 10) {
+      const newTask = {
+        id: uuidv4(),
+        completed: false,
+        priority,
+        text: task,
+      };
+
+      handleNewTask(newTask);
+      setTask("");
+    }
+  }
+
   return (
     <Card>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Add a new Priority Task to accomplish </h2>
-        {/* @TODO - priority level slect compononet */}
         <div className="input-group">
           <input
             type="text"
@@ -38,6 +59,10 @@ function TaskForm() {
             Add
           </Button>
         </div>
+
+        <PrioritySelect
+          selectPriority={(value) => handleSelectPriority(value)}
+        />
 
         {message && <div className="message">{message}</div>}
       </form>
