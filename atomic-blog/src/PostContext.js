@@ -10,6 +10,12 @@ function createRandomPost() {
 // 1) CREATE A CONTEXT
 const PostContext = createContext();
 
+/**
+ * PostProvider component provides a context for managing posts and search functionality.
+ * @param {Object} props - The component props.
+ * @param {ReactNode} props.children - The child components.
+ * @returns {JSX.Element} The rendered PostProvider component.
+ */
 function PostProvider({ children }) {
   const [posts, setPosts] = useState(() =>
     Array.from({ length: 30 }, () => createRandomPost())
@@ -49,6 +55,11 @@ function PostProvider({ children }) {
   );
 }
 
+/**
+ * Custom hook that returns the PostContext.
+ * @returns {Object} The PostContext object.
+ * @throws {Error} If used outside of the PostProvider.
+ */
 function usePosts() {
   const context = useContext(PostContext);
   if (context === undefined)
