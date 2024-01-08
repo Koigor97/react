@@ -1,4 +1,8 @@
-function TaskStats({ dummyTask }) {
+import { useTaskItems } from "./context/TaskItems";
+
+function TaskStats() {
+  const { dummyTask } = useTaskItems();
+
   const taskCount = dummyTask.length;
   const completionPercentage = Math.round(
     (dummyTask.completed / taskCount) * 100
