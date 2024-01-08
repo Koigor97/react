@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useTaskItems } from "./context/TaskItems";
 import { v4 as uuidv4 } from "uuid";
 
 import Card from "./shared/Card";
 import PrioritySelect from "./PrioritySelect";
 import Button from "./shared/Button";
 
-function TaskForm({ handleNewTask }) {
+function TaskForm() {
+  const { handleAddNewTask } = useTaskItems();
   const [task, setTask] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
@@ -39,7 +41,7 @@ function TaskForm({ handleNewTask }) {
         text: task,
       };
 
-      handleNewTask(newTask);
+      handleAddNewTask(newTask);
       setTask("");
     }
   }
