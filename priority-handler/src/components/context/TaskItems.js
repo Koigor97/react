@@ -12,13 +12,25 @@ function TaskItemsProvider({ children }) {
     },
   ]);
 
+  const [taskEdit, setTaskEdit] = useState({
+    item: {},
+    edit: false,
+  });
+
   function handleAddNewTask(value) {
     setDummyTask([value, ...dummyTask]);
   }
 
+  function handleEditTask(item) {
+    setTaskEdit({
+      item,
+      edit: true,
+    });
+  }
+
   return (
     <TaskItemsContext.Provider
-      value={{ dummyTask, setDummyTask, handleAddNewTask }}
+      value={{ dummyTask, setDummyTask, handleAddNewTask, handleEditTask }}
     >
       {children}
     </TaskItemsContext.Provider>
