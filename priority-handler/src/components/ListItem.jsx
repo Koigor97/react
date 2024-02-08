@@ -1,4 +1,4 @@
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaEdit } from "react-icons/fa";
 import Card from "./shared/Card";
 import { useTaskItems } from "./context/TaskItems";
 
@@ -11,7 +11,7 @@ function handleDelete(id, setTask, dummyTask) {
 }
 
 function ListItem() {
-  const { dummyTask } = useTaskItems();
+  const { dummyTask, handleEditTask } = useTaskItems();
 
   if (!dummyTask || dummyTask.length === 0) return <p>No Tasks to show</p>;
 
@@ -42,6 +42,9 @@ function List({ task }) {
         onClick={() => handleDelete(task.id, setTask, dummyTask)}
       >
         <FaTimes color="purple" />
+      </button>
+      <button className="edit" onClick={() => handleEditTask(item)}>
+        <FaEdit color="purple" />
       </button>
       <div>{task.text}</div>
       <form>
