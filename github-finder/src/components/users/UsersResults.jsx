@@ -7,8 +7,8 @@ import UserItem from "./UserItem";
 const githubApiURL = `https://api.github.com/users`;
 
 function UsersResults() {
-  //   const [usersArray, setUsersArray] = useState([]);
-  //   const [loading, setLoading] = useState(true);
+  const [usersArray, setUsersArray] = useState([]);
+  const [loading, setLoading] = useState(true);
   const initialState = {
     users: [],
     loading: true,
@@ -30,8 +30,8 @@ function UsersResults() {
             url: user.html_url,
           };
         });
-        // setUsersArray(refineData);
-        // setLoading(false);
+        setUsersArray(refineData);
+        setLoading(false);
         // console.log(refineData);
 
         dispatch({
@@ -47,10 +47,10 @@ function UsersResults() {
   }, []);
 
   //   console.log(usersArray);
-  if (!state.loading) {
+  if (!loading) {
     return (
       <div className="grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
-        {state.map((user) => (
+        {usersArray.map((user) => (
           <UserItem key={user.id} user={user} />
         ))}
       </div>
