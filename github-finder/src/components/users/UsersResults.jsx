@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
+import githubReducer from "../../context/github/GithubReducer";
 import LoadingSpinner from "../../assests/LoadingSpinner";
 import UserItem from "./UserItem";
 
@@ -6,8 +7,14 @@ import UserItem from "./UserItem";
 const githubApiURL = `https://api.github.com/users`;
 
 function UsersResults() {
-  const [usersArray, setUsersArray] = useState([]);
-  const [loading, setLoading] = useState(true);
+  //   const [usersArray, setUsersArray] = useState([]);
+  //   const [loading, setLoading] = useState(true);
+  const initialState = {
+    users: [],
+    loading: true,
+  };
+
+  const [state, dispatch] = useReducer(githubReducer, initialState);
 
   useEffect(function () {
     const getData = async () => {
@@ -23,9 +30,14 @@ function UsersResults() {
             url: user.html_url,
           };
         });
-        setUsersArray(refineData);
-        setLoading(false);
+        // setUsersArray(refineData);
+        // setLoading(false);
         // console.log(refineData);
+
+        dispatch({
+          type: "GET_USERS",
+          payload: refineData,
+        });
       } catch (e) {
         console.log(e);
       }
@@ -35,10 +47,10 @@ function UsersResults() {
   }, []);
 
   //   console.log(usersArray);
-  if (!loading) {
+  if (!state.loading) {
     return (
       <div className="grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
-        {usersArray.map((user) => (
+        {state.map((user) => (
           <UserItem key={user.id} user={user} />
         ))}
       </div>
