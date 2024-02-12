@@ -1,9 +1,9 @@
-import UsersResults from "../components/users/UsersResults";
+import UserResults from "../components/users/UserResults";
 
 function Home() {
   return (
     <>
-      <UsersResults />
+      <UserResults />
     </>
   );
 }
