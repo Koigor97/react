@@ -6,8 +6,6 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/layouts/Footer";
 
-import { GithubProvider } from "./context/github/GithubContext";
-
 function App() {
   return (
     <BrowserRouter>
