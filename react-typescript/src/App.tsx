@@ -22,6 +22,10 @@ export default function App() {
     });
   }
 
+  function handleDeleteGoal(id: number | string) {
+    setGoals((prevGoals) => prevGoals.filter((goal) => goal.id !== id));
+  }
+
   return (
     <main>
       <Header image={{ src: imgLogo, alt: "A list of goals" }}>
@@ -30,7 +34,7 @@ export default function App() {
 
       <button onClick={handleAddGoal}>Add Goal</button>
 
-      <ListItem goals={goals} />
+      <ListItem goals={goals} onDelete={handleDeleteGoal} />
     </main>
   );
 }
