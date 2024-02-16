@@ -1,8 +1,6 @@
-import { PropsWithChildren } from "react";
+import { HeaderType } from "../types";
 
-type HeaderTypes = PropsWithChildren<{ image: { src: string; alt: string } }>;
-
-export default function Header({ image, children }: HeaderTypes) {
+export default function Header({ image, children }: HeaderType) {
   return (
     <header>
       <div>
