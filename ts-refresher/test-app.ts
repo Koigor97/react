@@ -13,3 +13,10 @@ const sam: User = {
 };
 
 console.log(sam);
+
+function add(a: number, b: number)  {
+  const result = a + b;
+  return result;
+};
+
+console.log(function add(3, 13));
