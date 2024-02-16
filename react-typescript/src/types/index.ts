@@ -1,6 +1,14 @@
 import { PropsWithChildren, ReactNode } from "react";
 
-export type CourseGoalsType = PropsWithChildren<{ title: string }>;
+type HandleDeleteType = {
+  onHandleDelete?: (id: number | string) => void;
+};
+
+export type CourseGoalsType = PropsWithChildren<{
+  title: string;
+  id: number | string;
+  onDelete?: HandleDeleteType;
+}>;
 
 export type HeaderType = {
   image: {
@@ -13,9 +21,10 @@ export type HeaderType = {
 export type GoalsType = {
   title: string;
   description: string;
-  id: string;
+  id: string | number;
 };
 
 export type GoalsListType = {
   goals: GoalsType[];
+  onDelete?: HandleDeleteType;
 };
