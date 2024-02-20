@@ -1,12 +1,12 @@
 import CourseGoal from "./CourseGoals";
 import { GoalsListType } from "../types";
 
-export default function ListItem({ goals }: GoalsListType) {
+export default function ListItem({ goals, onDelete }: GoalsListType) {
   return (
     <ul>
       {goals.map((goal) => (
         <li key={goal.id}>
-          <CourseGoal title={goal.title}>
+          <CourseGoal id={goal.id} title={goal.title} onDelete={onDelete}>
             <p>{goal.description}</p>
           </CourseGoal>
         </li>
