@@ -28,3 +28,7 @@ export type GoalsListType = {
   goals: GoalsType[];
   onDelete?: HandleDeleteType;
 };
+
+export type NewGoalPropType = {
+  onAddNewGoal: (goal: string, summary: string) => void;
+};
