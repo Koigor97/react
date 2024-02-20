@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import Header from "./components/Header.tsx";
 import ListItem from "./components/ListItem.tsx";
+import NewGoal from "./components/NewGoal.tsx";
 
 import imgLogo from "./assets/goals.jpg";
 import { GoalsType } from "./types/index.ts";
@@ -10,12 +11,12 @@ import { GoalsType } from "./types/index.ts";
 export default function App() {
   const [goals, setGoals] = useState<GoalsType[]>([]);
 
-  function handleAddGoal() {
+  function handleAddGoal(goal: string, summary: string) {
     console.log("Click");
     setGoals((previousGoals) => {
       const newGoal: GoalsType = {
-        title: "Finish React",
-        description: "I want to finish learning React by the End of Nextweek",
+        title: goal,
+        description: summary,
         id: uuidv4(),
       };
       return [...previousGoals, newGoal];
@@ -32,7 +33,7 @@ export default function App() {
         <h1>Your Course Goals</h1>
       </Header>
 
-      <button onClick={handleAddGoal}>Add Goal</button>
+      <NewGoal onAddNewGoal={handleAddGoal} />
 
       <ListItem goals={goals} onDelete={handleDeleteGoal} />
     </main>
