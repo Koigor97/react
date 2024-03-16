@@ -6,6 +6,12 @@ const initialState = {
   loanPurpose: "",
 };
 
+const initialStateCustomer = {
+  fullName: "",
+  ntlID: "",
+  createdAt: "",
+};
+
 function reducer(state = initialState, action) {
   switch (action.type) {
     case "account/deposit":
@@ -63,3 +69,15 @@ store.dispatch(withdraw(100));
 console.log(store.getState());
 store.dispatch(requestLoan(1500));
 console.log(store.getState());
+
+// action creator for customer
+function createCustomer(fullName, ntlID) {
+  return {
+    type: "customer/createCustomer",
+    payload: { fullName, ntlID, createdAt: new Date().toISOString() },
+  };
+}
+
+function updateName(fullName) {
+  return { type: "account/updatName", payload: fullName };
+}
