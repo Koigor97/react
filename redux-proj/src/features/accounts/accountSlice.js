@@ -32,7 +32,7 @@ export default function accountReducer(state = initialStateAccount, action) {
 }
 
 // creating deposit action creators
-export function deposit(amount) {
+export function deposit(amount, currency) {
   return { type: "account/deposit", payload: amount };
 }
 // creating deposit action creators
@@ -40,10 +40,10 @@ export function withdraw(amount) {
   return { type: "account/withdraw", payload: amount };
 }
 // creating deposit action creators
-export function requestLoan(amount) {
+export function requestLoan(amount, purpose) {
   return {
     type: "account/requestLoan",
-    payload: { amount: amount, purpose: "To buy a car" },
+    payload: { amount: amount, purpose: purpose },
   };
 }
 
